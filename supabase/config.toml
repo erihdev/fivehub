@@ -1,0 +1,4 @@
+project_id = "nboxjdwyjopmcsdaieqa"
+
+[functions.ai-blend-suggestions]
+verify_jwt = false

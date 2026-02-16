@@ -1,0 +1,27 @@
+{
+  "name": "FIVE HUB - منصة سلسلة القهوة",
+  "short_name": "FIVE HUB",
+  "description": "منصة ربط المزارع والموردين والمحامص والمقاهي وخدمات الصيانة",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1a1412",
+  "theme_color": "#8B4513",
+  "orientation": "portrait-primary",
+  "dir": "rtl",
+  "lang": "ar",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "/favicon.ico",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity"],
+  "screenshots": []
+}
