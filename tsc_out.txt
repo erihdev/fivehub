@@ -1,0 +1,13 @@
+src/hooks/useGPS.ts(56,27): error TS2339: Property 'coords' does not exist on type 'GeolocationPosition'.
+src/hooks/useGPS.ts(57,28): error TS2339: Property 'coords' does not exist on type 'GeolocationPosition'.
+src/hooks/useGPS.ts(58,27): error TS2339: Property 'coords' does not exist on type 'GeolocationPosition'.
+src/hooks/useGPS.ts(59,27): error TS2339: Property 'coords' does not exist on type 'GeolocationPosition'.
+src/hooks/useGPS.ts(60,35): error TS2339: Property 'coords' does not exist on type 'GeolocationPosition'.
+src/hooks/useGPS.ts(61,26): error TS2339: Property 'coords' does not exist on type 'GeolocationPosition'.
+src/hooks/useGPS.ts(62,24): error TS2339: Property 'coords' does not exist on type 'GeolocationPosition'.
+src/hooks/useGPS.ts(96,13): error TS2345: Argument of type '(pos: GeolocationPosition) => void' is not assignable to parameter of type 'PositionCallback'.
+  Types of parameters 'pos' and 'position' are incompatible.
+    Type 'GeolocationPosition' is missing the following properties from type 'GeolocationPosition': latitude, longitude, accuracy, altitude, and 3 more.
+src/hooks/useGPS.ts(112,13): error TS2345: Argument of type '(pos: GeolocationPosition) => void' is not assignable to parameter of type 'PositionCallback'.
+  Types of parameters 'pos' and 'position' are incompatible.
+    Type 'GeolocationPosition' is missing the following properties from type 'GeolocationPosition': latitude, longitude, accuracy, altitude, and 3 more.
