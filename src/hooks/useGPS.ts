@@ -5,7 +5,7 @@ import { useState, useEffect, useCallback } from 'react';
  * نظام GPS متقدم مع دقة عالية وتتبع مستمر
  */
 
-export interface GeolocationPosition {
+export interface CustomGeolocationPosition {
     latitude: number;
     longitude: number;
     accuracy: number;
@@ -27,7 +27,7 @@ export interface UseGPSOptions {
     maximumAge?: number;
     watch?: boolean; // تتبع مستمر
     onError?: (error: GeolocationError) => void;
-    onSuccess?: (position: GeolocationPosition) => void;
+    onSuccess?: (position: CustomGeolocationPosition) => void;
 }
 
 export function useGPS(options: UseGPSOptions = {}) {
@@ -40,7 +40,7 @@ export function useGPS(options: UseGPSOptions = {}) {
         onSuccess,
     } = options;
 
-    const [position, setPosition] = useState<GeolocationPosition | null>(null);
+    const [position, setPosition] = useState<CustomGeolocationPosition | null>(null);
     const [error, setError] = useState<GeolocationError | null>(null);
     const [loading, setLoading] = useState(false);
     const [supported, setSupported] = useState(false);
@@ -52,7 +52,7 @@ export function useGPS(options: UseGPSOptions = {}) {
 
     // معالجة النجاح
     const handleSuccess = useCallback((pos: GeolocationPosition) => {
-        const locationData: GeolocationPosition = {
+        const locationData: CustomGeolocationPosition = {
             latitude: pos.coords.latitude,
             longitude: pos.coords.longitude,
             accuracy: pos.coords.accuracy,

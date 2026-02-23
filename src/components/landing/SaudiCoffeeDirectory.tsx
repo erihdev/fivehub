@@ -7,7 +7,6 @@ import { Coffee, Building2, Truck, MapPin, ExternalLink, Award, Crown, Sparkles 
 
 // Import local logos
 import dalLogo from '@/assets/dal-logo.png';
-import piccoloLogo from '@/assets/partners/piccolo-logo.png';
 import brew92Logo from '@/assets/partners/brew92-logo.svg';
 import riyadhRoasterLogo from '@/assets/partners/riyadh-roaster-logo.png';
 
@@ -46,7 +45,6 @@ const roasters: Partner[] = [
     city: 'Riyadh',
     cityAr: 'الرياض',
     website: 'https://piccolo.sa',
-    logo: piccoloLogo,
     founded: '2014',
     description: 'Pioneer specialty coffee roasters in Saudi Arabia since 2014',
     descriptionAr: 'رواد محامص القهوة المختصة في السعودية منذ 2014',
@@ -220,15 +218,15 @@ const suppliers: Partner[] = [
 
 const PartnerCard = ({ partner, language }: { partner: Partner; language: string }) => {
   const isArabic = language === 'ar';
-  
+
   return (
     <Card className="group hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-border/50 overflow-hidden">
       <CardContent className="p-6">
         <div className="flex flex-col items-center text-center">
           {partner.logo ? (
             <div className="w-20 h-20 mb-4 rounded-full bg-background border-2 border-primary/20 group-hover:border-primary/40 transition-all flex items-center justify-center overflow-hidden">
-              <img 
-                src={partner.logo} 
+              <img
+                src={partner.logo}
                 alt={isArabic ? partner.nameAr : partner.name}
                 className="w-16 h-16 object-contain"
               />
@@ -240,26 +238,26 @@ const PartnerCard = ({ partner, language }: { partner: Partner; language: string
               </span>
             </div>
           )}
-          
+
           <h3 className="font-semibold text-foreground mb-1 line-clamp-1">
             {isArabic ? partner.nameAr : partner.name}
           </h3>
-          
+
           <div className="flex items-center gap-1 text-sm text-muted-foreground mb-2">
             <MapPin className="w-3.5 h-3.5" />
             <span>{isArabic ? partner.cityAr : partner.city}</span>
           </div>
-          
+
           {partner.founded && (
             <Badge variant="outline" className="bg-muted/50 text-muted-foreground border-muted mb-2">
               {isArabic ? `منذ ${partner.founded}` : `Est. ${partner.founded}`}
             </Badge>
           )}
-          
+
           <p className="text-xs text-muted-foreground mb-3 line-clamp-2">
             {isArabic ? partner.descriptionAr : partner.description}
           </p>
-          
+
           <div className="flex flex-wrap gap-2 justify-center mb-3">
             {partner.verified && (
               <Badge className="bg-green-500/10 text-green-600 border-green-500/20">
@@ -273,9 +271,9 @@ const PartnerCard = ({ partner, language }: { partner: Partner; language: string
             </Badge>
           </div>
 
-          <Button 
-            variant="outline" 
-            size="sm" 
+          <Button
+            variant="outline"
+            size="sm"
             className="w-full gap-2 text-primary border-primary/30 hover:bg-primary/10"
             onClick={() => window.open(partner.website, '_blank')}
           >
@@ -313,7 +311,7 @@ const SaudiCoffeeDirectory = () => {
             <Crown className="w-4 h-4 text-amber-500" />
           </div>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            {isArabic 
+            {isArabic
               ? 'اكتشف أشهر المحامص والمقاهي وموردي البن الأخضر في المملكة العربية السعودية'
               : 'Discover the most renowned roasters, cafés, and green coffee suppliers in Saudi Arabia'}
           </p>
@@ -362,12 +360,12 @@ const SaudiCoffeeDirectory = () => {
 
         <div className="text-center mt-8 space-y-2">
           <p className="text-sm text-muted-foreground">
-            {isArabic 
+            {isArabic
               ? '* البيانات موثقة من المواقع الرسمية للشركات'
               : '* Data verified from official company websites'}
           </p>
           <p className="text-xs text-amber-600/80">
-            {isArabic 
+            {isArabic
               ? '✨ للظهور في هذا الدليل، اشترك في خطة Enterprise'
               : '✨ To appear in this directory, subscribe to the Enterprise plan'}
           </p>
