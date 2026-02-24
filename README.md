@@ -71,3 +71,24 @@ Yes, you can!
 To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
 
 Read more here: [Setting up a custom domain](https://docs.lovable.dev/features/custom-domain#custom-domain)
+
+## Enabling server-side XLSX exports (development)
+
+If you want the frontend to use the local XLSX generator service instead of the client CSV fallback, create a local env file with the server URL (Vite only exposes envs prefixed with `VITE_`):
+
+Add `.env.local` at the project root with:
+
+```
+VITE_XLSX_SERVER_URL=http://localhost:3000
+```
+
+Start the generator and run the test request:
+
+```bash
+cd server/generate-xlsx
+npm install
+node index.js        # or from project root: npm run start:xlsx-server
+node test-request.js # saves server/generate-xlsx/test-output.xlsx
+```
+
+The frontend shim will prefer the server when `VITE_XLSX_SERVER_URL` is set, and fall back to CSV if the server is unavailable.

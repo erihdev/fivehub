@@ -7,6 +7,8 @@
     "dev": "vite",
     "build": "node --max-old-space-size=8192 ./node_modules/vite/bin/vite.js build",
     "build:dev": "vite build --mode development",
+    "start:xlsx-server": "node server/generate-xlsx/index.js",
+    "test:xlsx-server": "node server/generate-xlsx/test-request.js",
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -52,6 +54,7 @@
     "date-fns-tz": "^3.2.0",
     "dompurify": "^3.3.1",
     "embla-carousel-react": "^8.6.0",
+    "file-saver": "^2.0.5",
     "framer-motion": "^12.34.0",
     "html2canvas": "^1.4.1",
     "input-otp": "^1.4.2",
@@ -73,7 +76,6 @@
     "tailwind-merge": "^2.6.0",
     "tailwindcss-animate": "^1.0.7",
     "vaul": "^0.9.9",
-    "xlsx": "^0.18.5",
     "zod": "^3.25.76"
   },
   "devDependencies": {
@@ -84,7 +86,8 @@
     "@types/react-dom": "^18.3.7",
     "@vitejs/plugin-react-swc": "^3.11.0",
     "autoprefixer": "^10.4.21",
-    "eslint": "^9.32.0",
+    "caniuse-lite": "^1.0.30001774",
+    "eslint": "^10.0.2",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
     "globals": "^15.15.0",
@@ -93,6 +96,6 @@
     "tailwindcss": "^3.4.17",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.38.0",
-    "vite": "^5.4.19"
+    "vite": "^7.3.1"
   }
 }
