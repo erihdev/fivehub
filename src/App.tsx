@@ -113,7 +113,6 @@ const PlatformGuide = lazy(() => import("./pages/PlatformGuide"));
 const App = () => {
   // Create QueryClient inside component to ensure proper React instance
   const [queryClient] = useState(() => new QueryClient());
-
   return (
     <ErrorBoundary>
       <BrowserRouter>
@@ -232,8 +231,7 @@ const App = () => {
                               <Route path="*" element={<NotFound />} />
                             </Routes>
                           </RemountOnNavigate>
-                        </Suspense>
-                      </div>
+                        </Suspense>                      </div>
                     </TooltipProvider>
                   </CartProvider>
                 </SubscriptionFeaturesProvider>

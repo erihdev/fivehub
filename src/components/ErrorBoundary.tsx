@@ -1,4 +1,5 @@
 import { Component, ErrorInfo, ReactNode } from 'react';
+import * as Sentry from '@sentry/react';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { AlertTriangle, RefreshCw, Home } from 'lucide-react';
@@ -35,8 +36,8 @@ export class ErrorBoundary extends Component<Props, State> {
     public componentDidCatch(error: Error, errorInfo: ErrorInfo) {
         console.error('Error caught by boundary:', error, errorInfo);
 
-        // يمكنك إرسال الخطأ إلى service مثل Sentry هنا
-        // Sentry.captureException(error, { extra: errorInfo });
+        // إرسال الخطأ إلى Sentry
+        Sentry.captureException(error, { extra: errorInfo });
 
         this.setState({
             error,
