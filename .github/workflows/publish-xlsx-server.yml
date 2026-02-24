@@ -22,12 +22,18 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
 
+      # For publishing to GHCR: you can use the repository's GITHUB_TOKEN
+      # if it has write permissions for packages. Alternatively create a
+      # Personal Access Token with `read:packages, write:packages, repo`
+      # scopes and add it as the secret `GHCR_PAT` in the repository.
       - name: Log in to GitHub Container Registry
         uses: docker/login-action@v2
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          # Prefer using a PAT stored in repo secrets as `GHCR_PAT`.
+          # If not set, workflow will fall back to the built-in GITHUB_TOKEN.
+          password: ${{ secrets.GHCR_PAT || secrets.GITHUB_TOKEN }}
 
       - name: Build and push image
         uses: docker/build-push-action@v4
