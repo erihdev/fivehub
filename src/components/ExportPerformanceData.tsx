@@ -90,14 +90,19 @@ export function ExportPerformanceData() {
     }
   };
 
-  return (
-    <Button variant="outline" onClick={exportToExcel} disabled={exporting}>
-      {exporting ? (
-        <Loader2 className="h-4 w-4 animate-spin ml-2" />
-      ) : (
-        <FileSpreadsheet className="h-4 w-4 ml-2" />
-      )}
-      تصدير Excel
-    </Button>
-  );
+    const serverUrl = (import.meta.env.VITE_XLSX_SERVER_URL as string | undefined) || "";
+    const tooltip = serverUrl
+      ? "سيُستخدم خادم XLSX المحلي لتوليد الملف؛ في حال فشل الاتصال سيُعاد التصدير كـ CSV"
+      : "الخادم غير مكوَّن محلياً — سيتم تنزيل CSV بدلاً من ملف Excel";
+
+    return (
+      <Button variant="outline" onClick={exportToExcel} disabled={exporting} title={tooltip}>
+        {exporting ? (
+          <Loader2 className="h-4 w-4 animate-spin ml-2" />
+        ) : (
+          <FileSpreadsheet className="h-4 w-4 ml-2" />
+        )}
+        تصدير Excel
+      </Button>
+    );
 }
